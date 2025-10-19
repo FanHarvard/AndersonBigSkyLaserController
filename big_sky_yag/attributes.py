@@ -142,35 +142,30 @@ class LaserStatus:
 
 class Flashlamp:
 
-    voltage = IntProperty(
-        name="flashlamp voltage",
-        command="V",
+    VMO = IntProperty(
+        name="flashlamp VMO",
+        command="VMO",
         ret_string="voltage  ---- V",
         lower_upper=(500, 1800),
         read_only=False,
     )
-    voltage_capacitor_sampled = IntProperty(
-        name="capacitor voltage sampled", command="VA", ret_string="voltage ac----V"
-    )
-    voltage_capacitor_instant = IntProperty(
-        name="capacitor voltage instant", command="VT", ret_string="voltage it----V"
-    )
-    energy = FloatProperty(
-        name="flashlamp energy",
-        command="ENE",
-        ret_string="energy    --.-J",
-        lower_upper=(7, 23),
-        decimals=1,
+
+    VIS = IntProperty(
+        name="flashlamp VIS",
+        command="VIS",
+        ret_string="voltage  ---- V",
+        lower_upper=(500, 1800),
         read_only=False,
     )
-    capacitance = FloatProperty(
-        name="capacitance",
-        command="CAP",
-        ret_string="capacity --.-uF",
-        lower_upper=(27.0, 33.0),
-        decimals=1,
+
+    VOS = IntProperty(
+        name="flashlamp VOS",
+        command="VOS",
+        ret_string="voltage  ---- V",
+        lower_upper=(500, 1800),
         read_only=False,
     )
+
     frequency = FloatProperty(
         name="frequency",
         command="F",
@@ -179,9 +174,11 @@ class Flashlamp:
         decimals=2,
         read_only=False,
     )
+
     counter = IntProperty(
         name="shot counter", command="C", ret_string="ct LP ---------"
     )
+
     user_counter = IntProperty(
         name="user shot counter", command="UC", ret_string="cu LP ---------"
     )
